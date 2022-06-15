@@ -30,9 +30,12 @@ export default function SearchMovies() {
                     value={query} onChange={(e) => setQuery(e.target.value)}/>
                 <button className="button" type="submit">Search</button>
             </form>
-            {movies.filter(movie => movie.poster_path).map(movie => (
-                <MovieCard movie={movie} key={movie.id}/>
-            ))}
+            <div className="card-list">
+                {movies.filter(movie => movie.poster_path).map(movie => (
+                    <MovieCard movie={movie} key={movie.id}/>
+                ))}
+            
+            </div>
         </>
     )
 }
